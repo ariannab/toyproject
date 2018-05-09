@@ -23,12 +23,25 @@ The Java class `ResourceManager` (`ResourceManager.java`) contains a bug:
 
 The return statement of method `canUseResource()` does not match what the Javadoc `@return` tag states. Randoop, by itself, is not able to detect such bug. However, when Jdoctor specifications are supplied to Randoop, it will be able to detect the bug.
 
+## Prerequisites
+
+You need Jdoctor and Randoop jars to try this example.
+
+- Clone this repository: `git clone https://github.com/ariannab/toyproject`
+
+- Download Jdoctor: `wget link/to/toradocu.jar`
+
+- Download Randoop: `wget link/to/randoop.jar`
+
 ## Automatic Fault Detection with Jdoctor
 
 Follow the steps to try it yourself.
 
-1. Download the Jdoctor jar: `wget link/to/toradocu/jar`
-2. Move to the folder where the jar is located and run the following command to generate Jdoctor specifications over the example class:
+1. Compile the example sources:
+
+`mkdir toyproject/bin/ && javac toyproject/src/* -d toyproject/bin/`
+
+2. Generate the Jdoctor specifications over the example class:
 
 `java -jar toradocu-1.0-all.jar --target-class ResourceManager --source-dir toyproject/src/ --class-dir toyproject/bin/ --randoop-specs toy-specs.json`
 
@@ -46,7 +59,7 @@ Randoop runs for 60 seconds on the classes in `myclasses.txt` and then prints th
 
 Randoop stops almost immediately because an error-revealing test is produced. You should see `ErrorTest0.java` in the current folder.
 
-5. Compile and then execute the error test generated at step 4:
+6. Compile and then execute the error test generated at step 4:
 
 `javac -classpath junit-4.12.jar ErrorTest0.java -sourcepath toyproject/src/`
 `java -classpath .:junit-4.12.jar:hamcrest-core-1.3.jar:toyproject/bin/ org.junit.runner.JUnitCore ErrorTest0`

@@ -49,7 +49,7 @@ Follow the steps to try it yourself.
 
 3. Run Randoop on the toyproject sources:
 
-`java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=myclasses.txt --time-limit=60`
+`java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=toyproject/myclasses.txt --time-limit=60`
 
 Randoop runs for 60 seconds on the classes in `myclasses.txt` and then prints the message: "No error-revealing tests to output".
 

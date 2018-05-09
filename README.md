@@ -16,7 +16,7 @@ The Java class `ResourceManager` (`ResourceManager.java`) contains a bug:
      * @return true if the resource is not locked, false otherwise
      */
     public boolean canUseResource(){
-        // bug
+        // bug! Should be: !resource.isLocked();
         return resource.isLocked();
     }
 ```

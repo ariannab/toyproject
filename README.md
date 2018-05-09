@@ -55,7 +55,7 @@ Randoop runs for 60 seconds on the classes in `myclasses.txt` and then prints th
 
 4. Now feed Randoop with the specifications generated at step 2:
 
-`java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=myclasses.txt --time-limit=60 --specifications=toy-specs.json --stop-on-error-test`
+`java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=toyproject/myclasses.txt --time-limit=60 --specifications=toy-specs.json --stop-on-error-test`
 
 Randoop stops almost immediately because an error-revealing test is produced. You should see `ErrorTest0.java` in the current folder.
 

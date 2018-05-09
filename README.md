@@ -31,7 +31,7 @@ You need Jdoctor and Randoop jars to try this example.
 
 - Download Jdoctor: `wget link/to/toradocu.jar`
 
-- Download Randoop: `wget link/to/randoop.jar`
+- Download Randoop: `wget https://github.com/randoop/randoop/releases/download/v4.0.3/randoop-all-4.0.3.jar`
 
 ## Automatic Fault Detection with Jdoctor
 

@@ -61,8 +61,9 @@ Randoop stops almost immediately because an error-revealing test is produced. Yo
 
 6. Compile and then execute the error test generated at step 4:
 
-`javac -classpath junit-4.12.jar ErrorTest0.java -sourcepath toyproject/src/`
-`java -classpath .:junit-4.12.jar:hamcrest-core-1.3.jar:toyproject/bin/ org.junit.runner.JUnitCore ErrorTest0`
+`javac -classpath randoop-all-4.0.3.jar ErrorTest0.java -sourcepath toyproject/src/`
+
+`java -classpath .:randoop-all-4.0.3.jar:toyproject/bin/ org.junit.runner.JUnitCore ErrorTest0`
 
 You should get the following error:
 ```

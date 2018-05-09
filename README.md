@@ -59,7 +59,7 @@ Randoop runs for 60 seconds on the classes in `myclasses.txt` and then prints th
 
 Randoop stops almost immediately because an error-revealing test is produced. You should see `ErrorTest0.java` in the current folder.
 
-6. Compile and then execute the error test generated at step 4:
+5. Compile and then execute the error test generated at step 4:
 
 `javac -classpath randoop-all-4.0.3.jar ErrorTest0.java -sourcepath toyproject/src/`
 

@@ -21,17 +21,17 @@ The Java class `ResourceManager` (`ResourceManager.java`) contains a bug:
     }
 ```
 
-The return statement of method `canUseResource()` does not match what the Javadoc `@return` tag states. Randoop, by itself, is not able to detect such bug. However, when Jdoctor specifications are supplied to Randoop, it will be able to detect the bug.
+The return statement of method `canUseResource()` does not match what the Javadoc `@return` tag states. `Randoop`, by itself, is not able to detect such bug. However, when `Toradocu` specifications are supplied to Randoop, it will be able to detect the bug.
 
 ## Prerequisites
 
-You need Jdoctor and Randoop jars to try this example.
+You need Toradocu and Randoop jars to try this example. If you already took any of the following steps, ignore it.
 
 - Clone this repository: `git clone https://github.com/ariannab/toyproject`
 
 - Download Randoop: `wget https://github.com/randoop/randoop/releases/download/v4.0.3/randoop-all-4.0.3.jar`
 
-- Clone Toradocu and build the fat jar:
+- Clone `Toradocu` and build the fat jar:
    ```
    git clone https://github.com/albertogoffi/toradocu.git
    cd toradocu
@@ -41,13 +41,13 @@ You need Jdoctor and Randoop jars to try this example.
 
 ## Automatic Fault Detection with Jdoctor
 
-Follow the steps to try it yourself.
+Follow these steps to try the example yourself.
 
 1. Compile the example sources:
 
 `mkdir toyproject/bin/ && javac toyproject/src/* -d toyproject/bin/`
 
-2. Generate the Jdoctor specifications over the example class:
+2. Generate the Toradocu specifications over the example class:
 
 `java -jar toradocu-1.0-all.jar --target-class ResourceManager --source-dir toyproject/src/ --class-dir toyproject/bin/ --randoop-specs toy-specs.json`
 
@@ -57,7 +57,7 @@ Follow the steps to try it yourself.
 
 `java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=toyproject/myclasses.txt --time-limit=60`
 
-Randoop runs for 60 seconds on the classes in `myclasses.txt` and then prints the message: "No error-revealing tests to output".
+Randoop runs for 60 seconds (according to the given time limit, which value is not crucial) on the classes in `myclasses.txt` and then prints the message: "No error-revealing tests to output".
 
 4. Now feed Randoop with the specifications generated at step 2:
 
@@ -77,4 +77,4 @@ java.lang.AssertionError: Post-condition: true if the resource is not locked, fa
     at org.junit.Assert.fail(Assert.java:88)
     at org.junit.Assert.assertTrue(Assert.java:41)
 ```
-Which means Randoop fed with the Jdoctor specifications was able to detect the bug on the postcondition.
+Which means Randoop fed with the Toradocu specifications was able to detect the bug on the postcondition.

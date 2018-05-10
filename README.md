@@ -29,9 +29,15 @@ You need Jdoctor and Randoop jars to try this example.
 
 - Clone this repository: `git clone https://github.com/ariannab/toyproject`
 
-- Download Jdoctor: `wget link/to/toradocu.jar`
-
 - Download Randoop: `wget https://github.com/randoop/randoop/releases/download/v4.0.3/randoop-all-4.0.3.jar`
+
+- Clone Toradocu and build the fat jar:
+   ```
+   git clone https://github.com/albertogoffi/toradocu.git
+   cd toradocu
+   ./gradlew shadowJar
+   ```
+   The fat jar is located under `toradocu/build/libs` and its name is `toradocu-1.0-all.jar`.
 
 ## Automatic Fault Detection with Jdoctor
 

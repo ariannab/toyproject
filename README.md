@@ -26,10 +26,9 @@ The return statement of method `canUseResource()` does not match what the Javado
 
 ## Prerequisites
 
-Clone this repository and move to its folder:
+Clone this repository:
 ```
 git clone https://github.com/ariannab/toyproject
-cd toyproject
 ```
 
 Download Randoop, and clone and build Toradocu:
@@ -44,7 +43,7 @@ cd toradocu
 Move the jars you obtained in a new folder `libs` under `toyproject`:
 ```
 cd ../toyproject && mkdir libs
-mv randoop-all-4.0.3.jar libs
+mv ../randoop-all-4.0.3.jar libs
 mv ../toradocu/build/libs/toradocu-1.0-all.jar libs
 ```
 

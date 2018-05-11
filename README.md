@@ -1,11 +1,9 @@
 # Toy Example
 
+This is a project that contains a bug that Toradocu+Randoop can discover.
+
 ## Folder Organization and Fault Description
 
-This toy example is organized as follows:
-
-* `toyproject` folder contains sources (folder `src`) and binaries (folder `bin`)
-* `myclasses.txt` is a file that lists the toyproject classes.
 
 The Java class `ResourceManager` (`ResourceManager.java`) contains a bug:
 
@@ -25,25 +23,21 @@ The return statement of method `canUseResource()` does not match what the Javado
 
 ## Prerequisites
 
-You need Toradocu and Randoop jars to try this example. If you already took any of the following steps, ignore it.
+Run the following in a clone of this repository, created by
+`git clone https://github.com/ariannab/toyproject`
 
-- Clone this repository: `git clone https://github.com/ariannab/toyproject`
+Download Randoop, and clone and build Toradocu:
 
-- Download Randoop: `wget https://github.com/randoop/randoop/releases/download/v4.0.3/randoop-all-4.0.3.jar`
+```
+wget https://github.com/randoop/randoop/releases/download/v4.0.3/randoop-all-4.0.3.jar
+git clone https://github.com/albertogoffi/toradocu.git
+cd toradocu
+./gradlew shadowJar
+```
 
-- Clone `Toradocu` and build the fat jar:
-   ```
-   git clone https://github.com/albertogoffi/toradocu.git
-   cd toradocu
-   ./gradlew shadowJar
-   ```
-   The fat jar is located under `toradocu/build/libs` and its name is `toradocu-1.0-all.jar`.
+## Using Toradocu to find the fault
 
-## Automatic Fault Detection with Jdoctor
-
-Follow these steps to try the example yourself.
-
-1. Compile the example sources:
+1. Compile the source code:
 
 `mkdir toyproject/bin/ && javac toyproject/src/* -d toyproject/bin/`
 
@@ -55,13 +49,13 @@ Follow these steps to try the example yourself.
 
 3. Run Randoop on the toyproject sources:
 
-`java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=toyproject/myclasses.txt --time-limit=60`
+`java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=toyproject/classlist.txt --time-limit=10`
 
-Randoop runs for 60 seconds (according to the given time limit, which value is not crucial) on the classes in `myclasses.txt` and then prints the message: "No error-revealing tests to output".
+Randoop generates tests and prints: "No error-revealing tests to output".
 
 4. Now feed Randoop with the specifications generated at step 2:
 
-`java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=toyproject/myclasses.txt --time-limit=60 --specifications=toy-specs.json --stop-on-error-test`
+`java -classpath randoop-all-4.0.3.jar:toyproject/bin randoop.main.Main gentests --classlist=toyproject/classlist.txt --time-limit=60 --specifications=toy-specs.json --stop-on-error-test`
 
 Randoop stops almost immediately because an error-revealing test is produced. You should see `ErrorTest0.java` in the current folder.
 

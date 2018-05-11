@@ -26,27 +26,27 @@ The return statement of method `canUseResource()` does not match what the Javado
 
 ## Prerequisites
 
-Clone this repository:
+Clone this repository and move to its folder:
 ```
 git clone https://github.com/ariannab/toyproject
+cd toyproject
 ```
 
-Download Randoop, and clone and build Toradocu. They will be put in a new folder `toyproject/libs`:
-
+Download Randoop, and clone and build Toradocu. They will be put in a new folder `libs`:
 ```
+mkdir libs
 wget https://github.com/randoop/randoop/releases/download/v4.0.3/randoop-all-4.0.3.jar
-mkdir toyproject/libs && mv randoop-all-4.0.3.jar toyproject/libs
+mv randoop-all-4.0.3.jar libs
 git clone https://github.com/albertogoffi/toradocu.git
 cd toradocu
 ./gradlew shadowJar
-mv build/libs/toradocu-1.0-all.jar ../toyproject/libs
+cd ..
+mv toradocu/build/libs/toradocu-1.0-all.jar libs
 ```
-Return to repository folder:
-`cd ../toyproject`
 
 ## Using Toradocu to find the fault
 
-Be sure you are in the `toyproject` folder to execute the following stesps.
+Be sure you are still in the `toyproject` folder to execute the following stesps.
 
 1. Compile the source code:
 

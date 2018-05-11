@@ -33,6 +33,8 @@ cd toyproject
 ```
 
 Download Randoop, and clone and build Toradocu. They will be put in a new folder `libs`:
+
+_Consider that building Toradocu takes about 10 minutes: if you have already done it before, just move toradocu-1.0-all.jar in toyproject/libs_
 ```
 mkdir libs
 wget https://github.com/randoop/randoop/releases/download/v4.0.3/randoop-all-4.0.3.jar

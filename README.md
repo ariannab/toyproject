@@ -32,18 +32,20 @@ git clone https://github.com/ariannab/toyproject
 cd toyproject
 ```
 
-Download Randoop, and clone and build Toradocu. They will be put in a new folder `libs`:
+Download Randoop, and clone and build Toradocu:
 
-_Consider that building Toradocu takes about 10 minutes: if you have already done it before, just move toradocu-1.0-all.jar in toyproject/libs_
 ```
-mkdir libs
 wget https://github.com/randoop/randoop/releases/download/v4.0.3/randoop-all-4.0.3.jar
-mv randoop-all-4.0.3.jar libs
 git clone https://github.com/albertogoffi/toradocu.git
 cd toradocu
 ./gradlew shadowJar
-cd ..
-mv toradocu/build/libs/toradocu-1.0-all.jar libs
+```
+
+Move the jars you obtained in a new folder `lib`under `toyproject`:
+```
+cd ../toyproject && mkdir libs
+mv randoop-all-4.0.3.jar libs
+mv ../toradocu/build/libs/toradocu-1.0-all.jar libs
 ```
 
 ## Using Toradocu to find the fault

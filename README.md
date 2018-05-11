@@ -41,7 +41,7 @@ cd toradocu
 ./gradlew shadowJar
 ```
 
-Move the jars you obtained in a new folder `lib`under `toyproject`:
+Move the jars you obtained in a new folder `libs` under `toyproject`:
 ```
 cd ../toyproject && mkdir libs
 mv randoop-all-4.0.3.jar libs

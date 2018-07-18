@@ -1,2 +1,2 @@
-ResourceManager
-Resource
+all.ResourceManager
+all.Resource

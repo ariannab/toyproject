@@ -33,17 +33,17 @@ basic-randoop: bin
 		randoop.main.Main gentests \
 		--classlist=classlist.txt \
 		--junit-output-dir=$@ \
-		--time-limit=30
+		--time-limit=10
 
 # generate tests with randoop and toradocu specifications
 randoop-with-specs: bin toy-specs.json
-	java -classpath $(RANDOOP-BIN): \
+	java -classpath $(RANDOOP-BIN):bin \
 		randoop.main.Main gentests \
 		--classlist=classlist.txt \
 		--specifications=toy-specs.json \
 		--stop-on-error-test \
 		--junit-output-dir=$@ \
-		--time-limit=30
+		--time-limit=10
 
 # remove the specification produced by toradocu and the produced test suites.
 clean:

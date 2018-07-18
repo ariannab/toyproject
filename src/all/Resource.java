@@ -1,3 +1,5 @@
+package all;
+
 public class Resource {
 
     /** Tells whether the resource is locked. */

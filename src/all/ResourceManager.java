@@ -1,3 +1,5 @@
+package all;
+
 public class ResourceManager {
 
     /** The resource managed. */
@@ -28,4 +30,16 @@ public class ResourceManager {
     public Resource getResource() {
         return resource;
     }
+
+
+    /**
+     *
+     * @param integer an int, must be positive
+     */
+    public void canUseParameter(int integer) throws IllegalArgumentException{
+        if(integer<=0)
+            throw new IllegalArgumentException();
+
+    }
+
 }

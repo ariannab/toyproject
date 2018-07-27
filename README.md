@@ -1,6 +1,6 @@
 # Toy Example
 
-This is a project that contains a bug that Toradocu+Randoop can discover.
+This is a toy project to test Toradocu+Randoop integration. This project contains a bug that Toradocu+Randoop can discover while Randoop alone cannot.
 
 ## Folder Organization and Fault Description
 
